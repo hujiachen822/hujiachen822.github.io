@@ -1,6 +1,208 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>MPAndroid增加图例点击效果 | Hujiachen's Blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">MPAndroid增加图例点击效果</h1><a id="logo" href="/.">Hujiachen's Blog</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">MPAndroid增加图例点击效果</h1><div class="post-meta">Aug 9, 2017</div><div class="post-content"><h3 id="MPAndroid增加图例点击效果"><a href="#MPAndroid增加图例点击效果" class="headerlink" title="MPAndroid增加图例点击效果"></a><b>MPAndroid增加图例点击效果</b></h3><p>本例子是根据 MPAndroidChart:v2.2.5 版本添加</p>
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>MPAndroidChart增加折线图图例点击效果 | Hujiachen's Blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">MPAndroidChart增加折线图图例点击效果</h1><a id="logo" href="/.">Hujiachen's Blog</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">MPAndroidChart增加折线图图例点击效果</h1><div class="post-meta">Aug 9, 2017</div><div class="post-content"><h3 id="MPAndroidChart增加折线图图例点击效果"><a href="#MPAndroidChart增加折线图图例点击效果" class="headerlink" title="MPAndroidChart增加折线图图例点击效果"></a><b>MPAndroidChart增加折线图图例点击效果</b></h3><p>本例子是根据 MPAndroidChart:v2.2.5 版本添加</p>
 <p>按照惯例线上图(堆叠图如何实现后面会写)</p>
 <h5 id="未点击图例"><a href="#未点击图例" class="headerlink" title="未点击图例: "></a><b>未点击图例:</b> <img src="http://oucyzj4wf.bkt.clouddn.com/legend.png" alt="未点击图例"></h5><h5 id="点击图例"><a href="#点击图例" class="headerlink" title="点击图例: "></a><b>点击图例:</b> <img src="http://oucyzj4wf.bkt.clouddn.com/legend2.png" alt="点击图例"></h5><p><b>提示：所有颜色部分可以用任意的色值不用在乎我的色值</b></p>
 <p><b>上代码: </b><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line">//ArrayList&lt;String&gt; nameArray 用来存线名称(图例名称)</div><div class="line">//HashMap&lt;String, ArrayList&lt;Float&gt;&gt; lineY  用来存线Y轴数据的 &lt;String(线名称)</div><div class="line">//colorResource 字体颜色自己随意改</div><div class="line">//ArrayList&lt;HashMap&lt;String, Boolean&gt;&gt; isCheck 用来记录线的点击状态 是否被点击</div><div class="line"></div><div class="line"> private void setPicEx(final LineData mLineData, final LineChart mLineChart, final float addValue) &#123;</div><div class="line"></div><div class="line">        // 用来存储每条线的最大值</div><div class="line">        final ArrayList&lt;Float&gt; maxYList = new ArrayList&lt;&gt;();</div><div class="line">        for (int i = 0; i &lt; nameArray.size(); i++) &#123;</div><div class="line">            maxYList.add(mLineData.getDataSetByIndex(i).getYMax());</div><div class="line">        &#125;</div><div class="line">        if (null == mContext || &quot;null&quot;.equals(mContext)) &#123;</div><div class="line">        &#125; else &#123;</div><div class="line">            LayoutInflater layoutInflater = LayoutInflater.from(mContext.getApplicationContext());</div><div class="line">            final int count = lineY.size();</div><div class="line">            mView.removeAllViews();</div><div class="line">            for (int i = 0; i &lt; count; i++) &#123;</div><div class="line">                View view = layoutInflater.inflate(R.layout.item_chart_ex, null, false);</div><div class="line">                final LinearLayout ly = (LinearLayout) view.findViewById(R.id.picEx);</div><div class="line">                final TextView txt = (TextView) view.findViewById(R.id.picName);</div><div class="line">                txt.setTextColor(mContext.getResources().getColor(colorResource));</div><div class="line">                if (i &gt; colorArray.size()) &#123;</div><div class="line">                    ly.setBackgroundColor(Color.parseColor(colorArray.get(i / colorArray.size())));</div><div class="line">                &#125; else &#123;</div><div class="line">                    ly.setBackgroundColor(Color.parseColor(colorArray.get(i)));</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                txt.setText(nameArray.get(i));</div><div class="line">                view.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">                    @Override</div><div class="line">                    public void onClick(View view) &#123;</div><div class="line">                        int index = 0;</div><div class="line">                        String name = txt.getText() + &quot;&quot;;</div><div class="line">                        // 获取第几个图例</div><div class="line">                        for (int i = 0; i &lt; nameArray.size(); i++) &#123;</div><div class="line">                            if (name.equals(nameArray.get(i))) &#123;</div><div class="line">                                index = i;</div><div class="line">                                break;</div><div class="line">                            &#125;</div><div class="line">                        &#125;</div><div class="line"></div><div class="line">                        // 判断点击的是哪个图例</div><div class="line">                        if (nameArray.get(index).equals(name)) &#123;</div><div class="line">                            if (isCheck.get(index).get(name)) &#123;</div><div class="line">                                ly.setBackgroundColor(Color.GRAY);// 设置灰色背景                           </div><div class="line">                                    mLineData.removeDataSet(index);//移除点击的图例数据</div><div class="line">                                    lineDataSets.add(index, new LineDataSet(null, name));// 添加一个null的数据弥补位置                                </div><div class="line">                                isCheck.get(index).put(name, false);// 记录被点击状态</div><div class="line">                            &#125; else &#123;</div><div class="line">                                if (index &gt; colorArray.size()) &#123;//行业均值点击</div><div class="line">                                    ly.setBackgroundColor(Color.parseColor(colorArray.get(index / colorArray.size())));// 设置背景颜色</div><div class="line">                                &#125; else &#123;</div><div class="line">                                    ly.setBackgroundColor(Color.parseColor(colorArray.get(index)));// 设置背景颜色</div><div class="line">                                &#125;                             </div><div class="line">                                    lineDataSets.remove(index);// 移除填充位置的数据</div><div class="line">                                    lineDataSets.add(index, lineDataSetsEmpty.get(index));//把数据填充到原来位置                                </div><div class="line">                                isCheck.get(index).put(name, true);//取消记录的点击状态</div><div class="line">                            &#125;</div><div class="line">                        &#125;                  </div><div class="line">                        mLineChart.notifyDataSetChanged();</div><div class="line">                        mLineChart.invalidate();//更新UI</div><div class="line">                        if (useYMax.size() != 0) &#123;</div><div class="line">                            setMinValueClick(mLineChart);</div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">                mView.addView(view);</div><div class="line">                if ((benchmarkName).equals(nameArray.get(i)) &amp;&amp; isVag) &#123;</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
 <p><b>这里是 R.layout.item_chart_ex 的 XML</b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:layout_width=&quot;wrap_content&quot;</div><div class="line">    android:layout_height=&quot;40dp&quot;</div><div class="line">    android:orientation=&quot;horizontal&quot;&gt;</div><div class="line"></div><div class="line">    &lt;LinearLayout</div><div class="line">        android:id=&quot;@+id/picEx&quot;</div><div class="line">        android:layout_centerVertical=&quot;true&quot;</div><div class="line">        android:layout_width=&quot;20dp&quot;</div><div class="line">        android:layout_height=&quot;12dp&quot;</div><div class="line">        android:layout_marginLeft=&quot;5dp&quot;</div><div class="line">        android:orientation=&quot;horizontal&quot;</div><div class="line">        android:background=&quot;#000000&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;TextView</div><div class="line">        android:padding=&quot;5dp&quot;</div><div class="line">        android:id=&quot;@+id/picName&quot;</div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;match_parent&quot;</div><div class="line">        android:layout_gravity=&quot;center_vertical&quot;</div><div class="line">        android:gravity=&quot;center&quot;</div><div class="line">        android:text=&quot;XXX&quot;</div><div class="line">        android:textColor=&quot;@color/fontColor&quot;</div><div class="line">        android:textSize=&quot;12dp&quot;</div><div class="line">        android:layout_alignParentTop=&quot;true&quot;</div><div class="line">        android:layout_toEndOf=&quot;@+id/picEx&quot; /&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/RelativeLayout&gt;</div></pre></td></tr></table></figure></div><div class="tags"></div><div class="post-nav"><a href="/2017/08/08/mapChart/" class="next">SVG格式地图显示并获取点击位置</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://hujiachen822.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">Hujiachen's Blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:layout_width=&quot;wrap_content&quot;</div><div class="line">    android:layout_height=&quot;40dp&quot;</div><div class="line">    android:orientation=&quot;horizontal&quot;&gt;</div><div class="line"></div><div class="line">    &lt;LinearLayout</div><div class="line">        android:id=&quot;@+id/picEx&quot;</div><div class="line">        android:layout_centerVertical=&quot;true&quot;</div><div class="line">        android:layout_width=&quot;20dp&quot;</div><div class="line">        android:layout_height=&quot;12dp&quot;</div><div class="line">        android:layout_marginLeft=&quot;5dp&quot;</div><div class="line">        android:orientation=&quot;horizontal&quot;</div><div class="line">        android:background=&quot;#000000&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;TextView</div><div class="line">        android:padding=&quot;5dp&quot;</div><div class="line">        android:id=&quot;@+id/picName&quot;</div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;match_parent&quot;</div><div class="line">        android:layout_gravity=&quot;center_vertical&quot;</div><div class="line">        android:gravity=&quot;center&quot;</div><div class="line">        android:text=&quot;XXX&quot;</div><div class="line">        android:textColor=&quot;@color/fontColor&quot;</div><div class="line">        android:textSize=&quot;12dp&quot;</div><div class="line">        android:layout_alignParentTop=&quot;true&quot;</div><div class="line">        android:layout_toEndOf=&quot;@+id/picEx&quot; /&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/RelativeLayout&gt;</div></pre></td></tr></table></figure>
+<p><b>联系方式：hujiachen822@163.com 583567162</b>t treeId) {<br>        this.treeId = treeId;<br>    }</p>
+<pre><code>//用来接收 是否Browser标识
+public void setIsBrowser(boolean isBrowser) {
+    this.isBrowser = isBrowser;
+}
+
+//判断哪个path更改颜色
+public void setDataColor(int forPositon, Paint mPaint) {
+    mPaint.setColor(0xffDDDDDD);
+    if (isBrowser) {
+        for (int i = 0; i &lt; mPositon.size(); i++) {
+            MapBean bean = mPositon.get(i);
+            if (MapUtils.getLocalPosition(bean.getName()) == forPositon) {
+                // MapUtils.getValueColor(Double.parseDouble(bean.getY()), mLabelBean) 根据值在图例的区间内来上色
+                mPaint.setColor(MapUtils.getValueColor(Double.parseDouble(bean.getY()), mLabelBean));
+                break;
+            } else {
+            }
+        }
+    } else {
+        for (int i = 0; i &lt; mPositon.size(); i++) {
+            MapBean bean = mPositon.get(i);
+            // (MapUtils.getLocalPosition(bean.getY()) 根据地名来获得对应SVG模块的位置
+            if (MapUtils.getLocalPosition(bean.getY()) == forPositon) {
+                            // MapUtils.getStateColor(bean.getState()) 根据标识来上色
+                mPaint.setColor(MapUtils.getStateColor(bean.getState()));
+                break;
+            } else {
+            }
+        }
+    }
+}
+
+@Override
+public boolean onTouchEvent(MotionEvent event) {
+    //------关键部分 判断点是否在 一个闭合的path内--------//
+    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+        MapBean a = new MapBean();
+        RectF mComputeRect = new RectF();
+        for (int i = 0; i &lt; mPaths.size(); i++) {
+            mPaths.get(i).path.computeBounds(mComputeRect, true);
+            Region region = new Region();
+            region.setPath(mPaths.get(i).path, new Region((int) mComputeRect.left, (int) mComputeRect.top, (int) mComputeRect.right, (int) mComputeRect.bottom));
+            // #号来标识的地方是我自己用来存储点击位置显示内容
+           # if (region.contains((int) event.getX(), (int) event.getY())) {
+                String name = MapUtils.getMapName(i);
+                String value = &quot;暂无数据&quot;;
+                for (int x = 0; x &lt; mPositon.size(); x++) {
+                    if (mPositon.get(x).getName().contains(name)) {
+                        value = mPositon.get(x).getY();
+                    }
+                }
+                a.setX(value);
+                a.setY(name);#
+
+                invokeProvinceListener(a);
+                break;
+            }
+        }
+    }
+    return true;
+}
+
+@Override
+protected void onSizeChanged(final int w, final int h, int oldw, int oldh) {
+    super.onSizeChanged(w, h, oldw, oldh);
+
+    if (mLoader != null) {
+        try {
+            mLoader.join();
+        } catch (InterruptedException e) {
+            Log.e(LOG_TAG, &quot;Unexpected error&quot;, e);
+        }
+    }
+
+    mLoader = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            mSvg.load(getContext(), mSvgResource);
+            synchronized (mSvgLock) {
+                mPaths = mSvg.getPathsForViewport(
+                        w - getPaddingLeft() - getPaddingRight(),
+                        h - getPaddingTop() - getPaddingBottom());
+                updatePathsPhaseLocked();
+            }
+            post(new Runnable() {
+                @Override
+                public void run() {
+                    invokeReadyListener();
+                    if (mSvgAnimator.isRunning()) mSvgAnimator.cancel();
+                    mSvgAnimator.start();
+                }
+            });
+        }
+    }, &quot;SVG Loader&quot;);
+    mLoader.start();
+}
+
+private void invokeReadyListener() {
+    if (mListener != null) mListener.onReady();
+}
+
+public void setOnReadyListener(OnReadyListener listener) {
+    mListener = listener;
+}
+
+private void updatePathsPhaseLocked() {
+    final int count = mPaths.size();
+    for (int i = 0; i &lt; count; i++) {
+        SvgHelper.SvgPath svgPath = mPaths.get(i);
+        svgPath.renderPath.reset();
+        svgPath.measure.getSegment(0.0f, svgPath.length * mPhase, svgPath.renderPath, true);
+        // Required only for Android 4.4 and earlier
+        svgPath.renderPath.rLineTo(0.0f, 0.0f);
+    }
+}
+
+public float getPhase() {
+    return mPhase;
+}
+
+public void setPhase(float phase) {
+    mPhase = phase;
+    synchronized (mSvgLock) {
+        updatePathsPhaseLocked();
+    }
+    invalidate();
+}
+
+public float getWait() {
+    return mWait;
+}
+
+public void setWait(float wait) {
+    mWait = wait;
+
+    invalidate();
+}
+
+public float getDrag() {
+    return mDrag;
+}
+
+public void setDrag(float drag) {
+    mDrag = drag;
+
+
+    int alpha = (int) (Math.min((1.0f - mDrag) * mFadeFactor, 1.0f) * 255.0f);
+    mDragPath.paint.setAlpha(alpha);
+
+    invalidate();
+}
+
+private static PathEffect createPathEffect(float pathLength, float phase, float offset) {
+    return new DashPathEffect(new float[]{pathLength, pathLength},
+            Math.max(phase * pathLength, offset));
+}
+
+private static Path makeDragPath(int radius) {
+    Path p = new Path();
+    RectF oval = new RectF(0.0f, 0.0f, radius * 2.0f, radius * 2.0f);
+
+    float cx = oval.centerX();
+    float cy = oval.centerY();
+    float rx = oval.width() / 2.0f;
+    float ry = oval.height() / 2.0f;
+
+    final float TAN_PI_OVER_8 = 0.414213562f;
+    final float ROOT_2_OVER_2 = 0.707106781f;
+
+    float sx = rx * TAN_PI_OVER_8;
+    float sy = ry * TAN_PI_OVER_8;
+    float mx = rx * ROOT_2_OVER_2;
+    float my = ry * ROOT_2_OVER_2;
+
+    float L = oval.left;
+    float T = oval.top;
+    float R = oval.right;
+    float B = oval.bottom;
+
+    p.moveTo(R, cy);
+    p.quadTo(R, cy + sy, cx + mx, cy + my);
+    p.quadTo(cx + sx, B, cx, B);
+    p.quadTo(cx - sx, B, cx - mx, cy + my);
+    p.quadTo(L, cy + sy, L, cy);
+    p.quadTo(L, cy - sy, cx - mx, cy - my);
+    p.quadTo(cx - sx, T, cx, T);
+    p.lineTo(cx, T - oval.height() * 1.3f);
+
+    return p;
+}
+</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;b&gt; 工具类代码如下&lt;/b&gt;</div><div class="line"></div><div class="line">##### &lt;b&gt; 根据状态判断颜色&lt;/br&gt;</div></pre></td></tr></table></figure>
+<p>public static int getStateColor(String state) {<br>        int color = 0;<br>        switch (state) {<br>            case “0”:<br>                color = 0xff5bc750;<br>                break;<br>            case “1”:<br>                color = 0xffa7d25b;<br>                break;<br>            case “2”:<br>                color = 0xfff7de4d;<br>                break;<br>            case “3”:<br>                color = 0xfffd9141;<br>                break;<br>            case “4”:<br>                color = 0xfff4534e;<br>                break;<br>        }<br>        return color;<br>    }</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">##### &lt;b&gt; 根据省份名称，来判断是第几个path改变颜色&lt;/br&gt;</div></pre></td></tr></table></figure>
+<p>public static int getLocalPosition(String name) {<br>        int i = -1;<br>        if (name.contains(“安徽”)) {<br>            i = 0;<br>        } else if (name.contains(“北京”)) {<br>            i = 1;<br>        } else if (name.contains(“重庆”)) {<br>            i = 2;<br>        } else if (name.contains(“福建”)) {<br>            i = 3;<br>        } else if (name.contains(“广东”)) {<br>            i = 4;<br>        } else if (name.contains(“甘肃”)) {<br>            i = 5;<br>        } else if (name.contains(“广西”)) {<br>            i = 6;<br>        } else if (name.contains(“贵州”)) {<br>            i = 7;<br>        } else if (name.contains(“海南”)) {<br>            i = 8;<br>        } else if (name.contains(“河北”)) {<br>            i = 9;<br>        } else if (name.contains(“河南”)) {<br>            i = 10;<br>        } else if (name.contains(“香港”)) {<br>            i = 11;<br>        } else if (name.contains(“黑龙江”)) {<br>            i = 12;<br>        } else if (name.contains(“湖南”)) {<br>            i = 13;<br>        } else if (name.contains(“湖北”)) {<br>            i = 14;<br>        } else if (name.contains(“吉林”)) {<br>            i = 15;<br>        } else if (name.contains(“江苏”)) {<br>            i = 16;<br>        } else if (name.contains(“江西”)) {<br>            i = 17;<br>        } else if (name.contains(“辽宁”)) {<br>            i = 18;<br>        } else if (name.contains(“澳门”)) {<br>            i = 19;<br>        } else if (name.contains(“内蒙古”)) {<br>            i = 20;<br>        } else if (name.contains(“宁夏”)) {<br>            i = 21;<br>        } else if (name.contains(“青海”)) {<br>            i = 22;<br>        } else if (name.contains(“陕西”)) {<br>            i = 23;<br>        } else if (name.contains(“四川”)) {<br>            i = 24;<br>        } else if (name.contains(“山东”)) {<br>            i = 25;<br>        } else if (name.contains(“上海”)) {<br>            i = 26;<br>        } else if (name.contains(“山西”)) {<br>            i = 27;<br>        } else if (name.contains(“天津”)) {<br>            i = 28;<br>        } else if (name.contains(“台湾”)) {<br>            i = 29;<br>        } else if (name.contains(“新疆”)) {<br>            i = 30;<br>        } else if (name.contains(“西藏”)) {<br>            i = 31;<br>        } else if (name.contains(“云南”)) {<br>            i = 32;<br>        } else if (name.contains(“浙江”)) {<br>            i = 33;<br>        }<br>        return i;<br>    }</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">##### &lt;b&gt; 根据SVG点击位置，获取省份名称&lt;/br&gt;</div></pre></td></tr></table></figure>
+<p> public static String getMapName(int position) {<br>        String name = “省份”;<br>        if (0 == position) {<br>            name = “安徽”;<br>        } else if (1 == position) {<br>            name = “北京”;<br>        } else if (2 == position) {<br>            name = “重庆”;<br>        } else if (3 == position) {<br>            name = “福建”;<br>        } else if (4 == position) {<br>            name = “广东”;<br>        } else if (5 == position) {<br>            name = “甘肃”;<br>        } else if (6 == position) {<br>            name = “广西”;<br>        } else if (7 == position) {<br>            name = “贵州”;<br>        } else if (8 == position) {<br>            name = “海南”;<br>        } else if (9 == position) {<br>            name = “河北”;<br>        } else if (10 == position) {<br>            name = “河南”;<br>        } else if (11 == position) {<br>            name = “香港”;<br>        } else if (12 == position) {<br>            name = “黑龙江”;<br>        } else if (13 == position) {<br>            name = “湖南”;<br>        } else if (14 == position) {<br>            name = “湖北”;<br>        } else if (15 == position) {<br>            name = “吉林”;<br>        } else if (16 == position) {<br>            name = “江苏”;<br>        } else if (17 == position) {<br>            name = “江西”;<br>        } else if (18 == position) {<br>            name = “辽宁”;<br>        } else if (19 == position) {<br>            name = “澳门”;<br>        } else if (20 == position) {<br>            name = “内蒙古”;<br>        } else if (21 == position) {<br>            name = “宁夏”;<br>        } else if (22 == position) {<br>            name = “青海”;<br>        } else if (23 == position) {<br>            name = “陕西”;<br>        } else if (24 == position) {<br>            name = “四川”;<br>        } else if (25 == position) {<br>            name = “山东”;<br>        } else if (26 == position) {<br>            name = “上海”;<br>        } else if (27 == position) {<br>            name = “山西”;<br>        } else if (28 == position) {<br>            name = “天津”;<br>        } else if (29 == position) {<br>            name = “台湾”;<br>        } else if (30 == position) {<br>            name = “新疆”;<br>        } else if (31 == position) {<br>            name = “西藏”;<br>        } else if (32 == position) {<br>            name = “云南”;<br>        } else if (33 == position) {<br>            name = “浙江”;<br>        }<br>        return name;<br>    }</p>
+<p>```</p>
+<p>好了，关于折线图例点击就说这么多吧如果有不懂的地方可以用下面的联系方式联系我</p>
+<p><b>联系方式: hujiachen822@163.com/583567165</b></p>
+</div><div class="tags"></div><div class="post-nav"><a href="/2017/08/09/strackChart/" class="pre">折线堆叠图实现 StrackLineChart</a><a href="/2017/08/08/mapChart/" class="next">SVG格式地图显示并获取点击位置</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://hujiachen822.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">Hujiachen's Blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
