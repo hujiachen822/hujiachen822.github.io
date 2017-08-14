@@ -18,22 +18,25 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align:center"></td>
 <td style="text-align:center">xhdpi</td>
 <td style="text-align:center">720x1280</td>
 <td style="text-align:center">320</td>
-<td style="text-align:center">Galaxy Nexus </td>
+<td>Galaxy Nexus </td>
 </tr>
 <tr>
+<td style="text-align:center"></td>
 <td style="text-align:center">xxhdpi</td>
 <td style="text-align:center">1080x1920</td>
 <td style="text-align:center">480</td>
-<td style="text-align:center">Nexus5    </td>
+<td>Nexus5    </td>
 </tr>
 <tr>
+<td style="text-align:center"></td>
 <td style="text-align:center">xxxhdpi</td>
 <td style="text-align:center">1440x2560</td>
 <td style="text-align:center">640</td>
-<td style="text-align:center">Nexus6    </td>
+<td>Nexus6    </td>
 </tr>
 </tbody>
 </table>
@@ -41,6 +44,7 @@
 <table>
 <thead>
 <tr>
+<th></th>
 <th>类型</th>
 <th>机型1</th>
 <th>机型2</th>
@@ -49,10 +53,24 @@
 <tbody>
 <tr>
 <td></td>
+<td>名称</td>
+<td>Galaxy Nexus</td>
+<td>Nexus 6</td>
+</tr>
+<tr>
+<td></td>
+<td>大小</td>
+<td><font color="#ff000"><b>945KB</b></font></td>
+<td><font color="#ff000"><b>3.7MB</b></font></td>
+</tr>
+<tr>
+<td></td>
+<td>参数</td>
+<td>screenDensity(320)xhdpi(320),bitmap(640*378)</td>
+<td>screenDensity(640),xhdpi(320),bitmap(640*378)</td>
 </tr>
 </tbody>
 </table>
-<p>名称|Galaxy Nexus|Nexus 6<br>大小|<font color="#ff000"><b>945KB</b></font>|<font color="#ff000"><b>3.7MB</b></font><br>参数|screenDensity(320)xhdpi(320),bitmap(640<em>378)|screenDensity(640),xhdpi(320),bitmap(640</em>378)</p>
 <p><b>.9的图片事例(略)</b></p>
 <p><b>RGB565 和 ARGB8888 的事例(略)</b></p>
 <h4 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h4><p><b>使用.9，尽量保证其足够精简</b><br><b>化大为小，化繁为简</b><br><b>用小图或者不用图</b><br><b>文字替换单色图片</b><br><b>尽量使用RGB565</b><br><b>Bitmap内存尽量复用</b><br> (<font color="#ff000"><b>在Android 4.4以后 只要长宽&lt;=目标内存宽高即可复用 ，4.4前则需要长宽==目标内存宽高</b></font>)<br><b>内存中保存压缩后的图片</b><br><b>用完及时释放图片内存</b></p>
